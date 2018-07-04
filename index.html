@@ -5,18 +5,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Color Matching Functions</title>
-  <script src="./colors.js"></script>
+  <script src="./index.js"></script>
+  <script src="./color-conversions.js"></script>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
   <div>
-      <div class="swatch" data-id="1"></div>
+      <div class="swatch" data-type="swatch" data-id="1"></div>
+  </div>
 
-      <div class="light-selector" class="light-selector" data-swatch-id="1">
-          <input type="range" class="light-selector--slider">
-          <input type="text" class="light-selector--display" disabled>
-      </div>
+  <div class="rgb-inputs" data-type="rgb-inputs">
+    r<input type="number" value=0 min=0 max=255 data-type="r">
+    g<input type="number" value=0 min=0 max=255 data-type="g">
+    b<input type="number" value=0 min=0 max=255 data-type="b">
+  </div>
+
+  <div class="xyY-inputs" data-type="xyY-inputs">
+    x<input type="number" value=0 max="1.0" data-type="x">
+    y<input type="number" value=0 max="1.0" data-type="y">
+    Y<input type="number" value=1 data-type="Y" disabled>
+  </div>
+
+  <div>
+    <canvas width="300" height="300" id="chromaticityDiagram"></canvas><br>
+    <button id="drawChromaticityDiagram">Draw</button>
   </div>
 
 </body>
